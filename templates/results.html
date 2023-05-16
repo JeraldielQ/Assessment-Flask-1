@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Results!{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div></div>
+        <div>
+            <h1>{{input_symbol}}&nbsp;{{amount}}</h1>
+            <h2>{{input_name}}</h2>
+            <h1 id="result">{{output_symbol}}&nbsp;{{converted}}</h1>
+            <h2>{{output_name}}</h2>
+            <form action="/">
+                <button type="submit">Back To Home</button>
+            </form>
+        </div>
+        <div></div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}ForEx Converter!{% endblock %}
+
+{% block content %}
+<div class="converter-container">
+    <h1 class="converter-title"><strong>Currency Converter</strong></h1>
+    <div class="converter-form">
+        <form method="POST" action="/result">
+            <div class="converter-input">
+                <label for="inputcurrency">Converting from:</label>
+                <input type="text" id="inputcurrency" name="inputcurrency">
+            </div>
+
+            <div class="converter-input">
+                <label for="outputcurrency">Converting to:</label>
+                <input type="text" id="outputcurrency" name="outputcurrency">
+            </div>
+
+            <div class="converter-input">
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount">
+            </div>
+            
+            <div class="converter-input">
+                {% for category, msg in get_flashed_messages(with_categories=true) %}
+                    <p class="error">{{ msg }}</p>
+                {% endfor %}
+            </div>
+
+            <button class="converter-button" type="submit">Convert</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
